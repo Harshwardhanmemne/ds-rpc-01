@@ -108,10 +108,9 @@ streamlit run frontend/ui.py
 ## 📚 **Credits**
 
 💡 Built as part of the Codebasics Resume Project Challenge
-📘 LangChain learning via CampusX YouTube Channel
 
 ---
 
 ## 📜 **License**
 
-Open-source for educational use.
+Open-source for educational use,if using give due credit
