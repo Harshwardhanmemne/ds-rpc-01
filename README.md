@@ -106,6 +106,7 @@ streamlit run frontend/ui.py
 ---
 
 ## 📚 **Credits**
+
 💡 Built as part of the Codebasics Resume Project Challenge
 📘 LangChain learning via CampusX YouTube Channel
 
