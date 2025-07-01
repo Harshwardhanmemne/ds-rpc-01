@@ -2,6 +2,9 @@ from typing import Dict
 
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
+"""importing the required answer query from chatbot.py"""
+from app.chatbot_query import answer_query
+
 
 
 app = FastAPI()
@@ -14,7 +17,9 @@ users_db: Dict[str, Dict[str, str]] = {
     "Sam": {"password": "financepass", "role": "finance"},
     "Peter": {"password": "pete123", "role": "engineering"},
     "Sid": {"password": "sidpass123", "role": "marketing"},
-    "Natasha": {"passwoed": "hrpass123", "role": "hr"}
+    "Natasha": {"password": "hrpass123", "role": "hr"},
+    "Steve": {"password": "stevepass", "role": "c-level"}
+
 }
 
 
@@ -43,4 +48,5 @@ def test(user=Depends(authenticate)):
 # Protected chat endpoint
 @app.post("/chat")
 def query(user=Depends(authenticate), message: str = "Hello"):
-    return "Implement this endpoint."
+    result = answer_query(message, user['role'])
+    return {"answer": result["answer"], "sources": result["sources"]}

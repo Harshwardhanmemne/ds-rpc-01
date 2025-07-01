@@ -12,3 +12,8 @@ wheels/
 *.lock
 resources/vectorstore
 .env
+rbac/
+# Vector DB folder
+db/
+.vscode/
+
